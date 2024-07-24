@@ -1,5 +1,11 @@
 .ipynb*
 
+*zip
+download*
+
+data/*
+!data/.gitkeep
+
 # Your virutal env name
 tervenv
 myenv
