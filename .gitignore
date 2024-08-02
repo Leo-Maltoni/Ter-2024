@@ -3,6 +3,8 @@
 *zip
 download*
 
+!scripts/download.sh
+
 data/*
 !data/.gitkeep
 
