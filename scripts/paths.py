@@ -22,6 +22,10 @@ def get_sentinel_data_path() -> dict:
                 paths[y][m][band_name] = os.path.abspath(f"./data/sentinel2_bands/{year}/{month}/{band}")
     return paths
 
+def get_mask_path() -> str: 
+    return os.path.abspath("./data/mask.tif")
+
 sentinel_data_path = get_sentinel_data_path()
 elevation_path = get_elevation_data_path()
 geojson_path = get_geojson_path()
+mask_path = get_mask_path()

@@ -19,3 +19,7 @@ mv 'Elevation data' data/elevation_data
 # GeoJSON Dataset
 wget https://cloud.irit.fr/s/3hEr67GQ2C4bWG9/download
 mv download data/dataset.geojson
+
+# Mask 
+wget https://cloud.irit.fr/s//download
+mv download data/mask.tif
