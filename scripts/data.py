@@ -1,3 +1,4 @@
+import json
 import geopandas as gpd
 import rasterio
 from rasterio.mask import geometry_mask
@@ -30,9 +31,8 @@ def get_mask(meta):
 
 def get_data(load_saved=False):
     if load_saved:
-        print("lik")
         return scipy.io.loadmat('./data/data.mat')['data'].keys()
-    print("hhh")
+    
     sentinel_data_path = get_sentinel_data_path()
     years = map(str, list(sentinel_data_path.keys()))
     meta = None 
@@ -77,11 +77,8 @@ def get_altitude_data(meta):
     # Resample altitude data to match the other bands
     elevation_path = get_elevation_data_path()
     with rasterio.open(elevation_path) as src:
-        altitude_meta = src.meta
-        transform, width, height = calculate_default_transform(
-            src.crs, meta['crs'], meta['width'], meta['height'], *src.bounds)
         altitude_resampled = np.zeros((meta['height'], meta['width']), np.float32)
-
+        
         reproject(
             source=rasterio.band(src, 1),
             destination=altitude_resampled,
@@ -97,3 +94,18 @@ def get_meta():
     meta = rasterio.open(get_sentinel_data_path()[2019][1]['B02']).meta
 
     return meta
+
+def serialize_meta(meta): 
+    #serialize in json 
+    meta_serialized = json.dumps({
+    'driver': meta['driver'],
+    'dtype': meta['dtype'],
+    'nodata': meta['nodata'],
+    'width': meta['width'],
+    'height': meta['height'],
+    'count': meta['count'],
+    'crs': str(meta['crs']),  # Convert the CRS object to a string
+    'transform': str(meta['transform'])  # Convert the Affine object to a string
+    })
+
+    return meta_serialized
