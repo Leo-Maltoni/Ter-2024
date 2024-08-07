@@ -1,8 +1,8 @@
 .ipynb*
-
+__pycache__
 *zip
-download*
 
+download*
 !scripts/download.sh
 
 data/*
