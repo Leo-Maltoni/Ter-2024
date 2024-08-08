@@ -1,6 +1,6 @@
 import h5py
 
-def create_hdf5(sentinel_data,altitude_data,meta_serialized,mask,hdf5_filename='hypercube.h5'):
+def create_hdf5(sentinel_data,altitude_data,meta_serialized,mask,categorical_mask,hdf5_filename='hypercube.h5'):
     with h5py.File(hdf5_filename, 'w') as hdf_file:
 
         # Save altitude data
@@ -17,3 +17,6 @@ def create_hdf5(sentinel_data,altitude_data,meta_serialized,mask,hdf5_filename='
 
         # Save metadata
         hdf_file.attrs['meta'] = meta_serialized
+
+        # Save Categorical Mask
+        hdf_file.create_dataset('categorical_mask', data=categorical_mask, compression='gzip', compression_opts=9)
