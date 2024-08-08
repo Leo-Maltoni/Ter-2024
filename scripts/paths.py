@@ -25,6 +25,9 @@ def get_sentinel_data_path() -> dict:
 def get_mask_path() -> str: 
     return os.path.abspath("./data/mask.tif")
 
+def get_weather_path() -> str:  
+    return os.path.abspath("./data/weather_data/")
+
 sentinel_data_path = get_sentinel_data_path()
 elevation_path = get_elevation_data_path()
 geojson_path = get_geojson_path()

@@ -5,7 +5,7 @@ from rasterio.mask import geometry_mask
 import numpy as np
 import scipy.io
 from rasterio.warp import reproject, Resampling
-from scripts.paths import get_elevation_data_path, get_geojson_path, get_sentinel_data_path,geojson_path
+from scripts.paths import get_elevation_data_path, get_geojson_path, get_sentinel_data_path
 from rasterio.mask import geometry_mask
 
 def calculate_ndvi(red, nir):

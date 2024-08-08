@@ -1,6 +1,6 @@
 from scripts.data import get_mask, get_meta , serialize_meta, get_altitude_data,get_data,get_categorical_mask
 from scripts.hdf5 import create_hdf5
-
+from scripts.WeatherData import temperature_array,rainfall_array
 # Retrieve data 
 sentinel_data = get_data()
 
@@ -17,4 +17,4 @@ mask = get_mask(meta)
 categorical_mask = get_categorical_mask(meta)
 
 # Create HDF5 file using the retrieved data
-create_hdf5(sentinel_data,altitude_data,meta_serialized,mask,categorical_mask)
+create_hdf5(sentinel_data,altitude_data,meta_serialized,mask,categorical_mask,temperature_array,rainfall_array)
