@@ -1,6 +1,8 @@
 .ipynb*
 __pycache__
 *zip
+*png
+*h5
 
 download*
 !scripts/download.sh
