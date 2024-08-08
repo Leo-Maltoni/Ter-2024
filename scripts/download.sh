@@ -23,3 +23,9 @@ mv download data/dataset.geojson
 # Mask 
 wget https://cloud.irit.fr/s//download
 mv download data/mask.tif
+
+# Weather
+wget 
+unzip download
+rm download
+mv Weather_data data
