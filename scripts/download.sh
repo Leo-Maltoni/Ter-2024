@@ -25,7 +25,7 @@ wget https://cloud.irit.fr/s//download
 mv download data/mask.tif
 
 # Weather
-wget 
+wget https://cloud.irit.fr/s/heJthmJrkQtU6VD/download
 unzip download
 rm download
 mv Weather_data data
