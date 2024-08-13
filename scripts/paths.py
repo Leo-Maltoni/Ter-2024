@@ -22,9 +22,6 @@ def get_sentinel_data_path() -> dict:
                 paths[y][m][band_name] = os.path.abspath(f"./data/sentinel2_bands/{year}/{month}/{band}")
     return paths
 
-def get_mask_path() -> str: 
-    return os.path.abspath("./data/mask.tif")
-
 def get_weather_path() -> str:  
     return os.path.abspath("./data/Weather_data/")
 

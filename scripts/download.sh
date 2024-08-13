@@ -20,10 +20,6 @@ mv 'Elevation data' data/elevation_data
 wget https://cloud.irit.fr/s/3hEr67GQ2C4bWG9/download
 mv download data/dataset.geojson
 
-# Mask 
-wget https://cloud.irit.fr/s//download
-mv download data/mask.tif
-
 # Weather
 wget https://cloud.irit.fr/s/heJthmJrkQtU6VD/download
 unzip download
