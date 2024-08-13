@@ -1,5 +1,5 @@
 .ipynb*
-__pycache__
+**/__pycache__
 *zip
 *png
 *h5
@@ -13,3 +13,4 @@ data/*
 # Your virutal env name
 tervenv
 myenv
+    
